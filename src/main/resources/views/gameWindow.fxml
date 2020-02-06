@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.logic.game.GameController">
+    <children>
+        <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #000000;">
+            <children>
+                <HBox layoutX="14.0" layoutY="14.0" prefHeight="85.0" prefWidth="684.0">
+                    <children>
+                        <VBox prefHeight="85.0" prefWidth="209.0">
+                            <children>
+                                <Label prefHeight="29.0" prefWidth="113.0" text="Score:" textFill="WHITE">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="29.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="87.0" prefWidth="159.0" textFill="WHITE">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="29.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="85.0" prefWidth="204.0">
+                            <children>
+                                <Label fx:id="highScore" prefHeight="41.0" prefWidth="205.0" text="High Score:" textFill="WHITE">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="29.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="HighScore" prefHeight="44.0" prefWidth="207.0" textFill="WHITE">
+                                    <font>
+                                        <Font name="Comic Sans MS Bold" size="29.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="85.0" prefWidth="147.0" />
+                    </children>
+                </HBox>
+            <Canvas height="571.0" layoutY="63.0" width="714.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

@@ -1,0 +1,162 @@
+import com.github.spotbugs.SpotBugsTask
+
+//Mutation Testing tool pitest
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    configurations.maybeCreate('pitest')
+    dependencies {
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.5'
+        pitest 'org.pitest:pitest-junit5-plugin:0.10'
+    }
+}
+
+plugins {
+    id 'java'
+//    id 'eclipse' // optional (to generate Eclipse project files)
+//    id 'idea' // optional (to generate IntelliJ IDEA project files)
+
+    // Test coverage
+    id 'jacoco'
+
+    // Code style
+    id 'checkstyle'
+
+    // PMD
+    id 'pmd'
+
+    // FindBugs / SpotBugs
+    id "com.github.spotbugs" version "2.0.1"
+
+//    id 'info.solidsoft.pitest' version '1.4.6'
+
+    // JavaFX
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+
+//Applying the mutation testing tool
+apply plugin: 'info.solidsoft.pitest'
+
+mainClassName = 'pacman.Main'
+
+group 'nl.tudelft.cse.sem.template'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 12
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+
+    jacoco {
+        enabled = true
+        includes = ['pacman*']
+    }
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    compile 'org.jetbrains:annotations:13.0'
+    testCompile 'junit:junit:4.11'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.0.0'
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '2.0.4'
+}
+
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: 'pacman/graphics/**')
+        })
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule { // Min 50% branch coverage
+            enabled = true
+            element = 'CLASS'
+            includes = ['pacman.*']
+            excludes = ['pacman.graphics*', 'pacman.Main']
+
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.5
+            }
+        }
+    }
+}
+
+pmd {
+    incrementalAnalysis = true
+}
+
+javafx {
+    version = "12.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+checkstyle {
+    toolVersion "8.25"
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+}
+
+pitest {
+    targetClasses = ['pacman.*']
+    pitestVersion = "1.4.9"
+//    targetTests = ['*Test*']
+//    verbose = true
+    testPlugin = "junit5"
+    excludedClasses = ['pacman.graphics.*', 'pacman.database.*', 'pacman.Main']
+    outputFormats = ['HTML']
+    jvmArgs = ['-enableassertions']
+    timestampedReports = false
+}
+
+
+spotbugs {
+    sourceSets = [sourceSets.main]
+    ignoreFailures = false
+    effort = "default"
+    reportLevel = "high"
+    visitors = ["FindSqlInjection", "SwitchFallthrough"]
+    excludeFilter = file("$rootProject.projectDir/config/spotbugs/excludeFilter.xml")
+}
+
+sourceSets.main {
+    java {
+        srcDir 'src/main/java'
+    }
+    resources {
+        srcDirs = ['src/main/java', 'src/main/resources']
+        exclude "**/*.java"
+    }
+}
+
+sourceSets.test {
+    java {
+        srcDirs 'src/test/java'
+    }
+}
+
+tasks.withType(SpotBugsTask) {
+    reports.xml.enabled = false
+    reports.html.enabled = true
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}

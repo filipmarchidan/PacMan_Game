@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="798.0" prefWidth="799.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.graphics.gui.LoginController">
+   <children>
+      <AnchorPane fx:id="anchorRoot" prefHeight="801.0" prefWidth="801.0">
+         <children>
+            <ImageView fitHeight="798.0" fitWidth="798.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../background.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="usernameTextField" alignment="CENTER" centerShape="false" layoutY="-34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="218.0" scaleShape="false" translateX="332.0" translateY="217.0">
+               <effect>
+                  <InnerShadow />
+               </effect></TextField>
+            <PasswordField fx:id="passwordField" alignment="CENTER" centerShape="false" layoutX="332.0" layoutY="303.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="218.0" scaleShape="false">
+               <effect>
+                  <InnerShadow />
+               </effect></PasswordField>
+            <VBox layoutX="171.0" layoutY="450.0" prefHeight="60.0" prefWidth="52.0" style="-fx-border-color: #0033EE; -fx-border-width: 2;">
+               <effect>
+                  <Reflection bottomOpacity="0.15" fraction="1.0" topOpacity="0.54" />
+               </effect></VBox>
+            <VBox layoutX="537.0" layoutY="450.0" prefHeight="60.0" prefWidth="52.0" style="-fx-border-color: #0033EE; -fx-border-width: 2;">
+               <effect>
+                  <Reflection bottomOpacity="0.15" fraction="1.0" topOpacity="0.54" />
+               </effect></VBox>
+            <Label layoutX="166.0" layoutY="408.0" text="......" textFill="#fceb00">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="535.0" layoutY="408.0" text="......" textFill="#fceb00">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="183.0" layoutY="452.0" rotate="-90.0" text="........" textFill="#fceb00">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+            </Label>
+            <Label layoutX="477.0" layoutY="453.0" rotate="-90.0" text="........" textFill="#fceb00">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="190.0" nodeOrientation="LEFT_TO_RIGHT" text="Username:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="298.0" nodeOrientation="LEFT_TO_RIGHT" text="Password:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="loginButton" layoutX="280.0" layoutY="452.0" mnemonicParsing="false" onAction="#loadMenuScreen" prefHeight="31.0" prefWidth="215.0" style="-fx-background-color: #0018F9; -fx-border-color: #fbff00;" text="Login" textFill="#fbff00">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="280.0" layoutY="549.0" mnemonicParsing="false" onAction="#loadRegisterScreen" prefHeight="31.0" prefWidth="215.0" style="-fx-background-color: #0018F9; -fx-border-color: #fbff00;" text="Register" textFill="#fbff00">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

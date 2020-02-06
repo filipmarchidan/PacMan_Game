@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<!--<?import javafx.scene.effect.Light.Distant?>-->
+
+<AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.graphics.gui.MenuController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="800.0" nodeOrientation="INHERIT" pickOnBounds="true">
+         <image>
+            <Image url="@../background.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <HBox alignment="CENTER" layoutX="220.0" layoutY="137.0" prefHeight="109.0" prefWidth="333.0" style="-fx-background-color: #000000; -fx-border-color: #0018F9; -fx-border-width: 5;">
+         <children>
+            <Label fx:id="LabelPacMan" alignment="CENTER" prefHeight="109.0" prefWidth="323.0" text="PacMan" textAlignment="CENTER" textFill="#fffa00">
+               <font>
+                  <Font name="System Bold" size="78.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.68" topOpacity="0.18" />
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </HBox>
+      <Button fx:id="buttonPlay" layoutX="337.0" layoutY="356.0" mnemonicParsing="false" onAction="#loadGameScreen" prefHeight="77.0" prefWidth="95.0" style="-fx-border-color: #0B662B;                     -fx-border-width: 2; -fx-background-color: #025FBA;">
+         <font>
+            <Font name="Comic Sans MS Bold" size="35.0" />
+         </font>
+         <graphic>
+            <Polygon fill="#fcfcfc" onMouseClicked="#loadGameScreen" points="4.493978500366211, 39.8684196472168, 50.0, 40.0, 25.884048461914062, 85.39007568359375" rotate="-90.0" stroke="#0d0d0d" strokeType="INSIDE">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Polygon>
+         </graphic>
+         <effect>
+            <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="40.0" surfaceScale="3.09">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button fx:id="profileButton" layoutX="271.0" layoutY="513.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="31.0" prefWidth="215.0" style="-fx-background-color: #0018F9;" text="View Profile" textFill="#fff600">
+         <font>
+            <Font name="Comic Sans MS Bold" size="27.0" />
+         </font>
+         <effect>
+            <DropShadow color="#f7ec00">
+               <input>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button fx:id="leaderboardButton" layoutX="271.0" layoutY="603.0" mnemonicParsing="false" onAction="#goToLeaderBoard" prefHeight="31.0" prefWidth="215.0" style="-fx-background-color: #0018F9;" text="Leaderboard" textFill="#fffa00">
+         <font>
+            <Font name="Comic Sans MS Bold" size="27.0" />
+         </font>
+         <effect>
+            <DropShadow color="#fff403f2">
+               <input>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Label layoutX="260.0" layoutY="433.0" prefHeight="56.0" prefWidth="253.0" text=".............." textFill="#ffd900">
+         <font>
+            <Font name="Comic Sans MS Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="381.0" prefHeight="36.0" prefWidth="105.0" rotate="90.0" text="......" textFill="#ffee00">
+         <font>
+            <Font name="Comic Sans MS Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="381.0" prefHeight="36.0" prefWidth="105.0" rotate="90.0" text="......" textFill="#ffee00">
+         <font>
+            <Font name="Comic Sans MS Bold" size="40.0" />
+         </font>
+      </Label>
+      <HBox layoutX="231.0" layoutY="362.0" prefHeight="77.0" prefWidth="40.0" style="-fx-border-color: #0018F9; -fx-border-width: 2;">
+         <effect>
+            <Reflection fraction="1.0" topOpacity="0.73" />
+         </effect>
+      </HBox>
+      <HBox layoutX="495.0" layoutY="362.0" prefHeight="77.0" prefWidth="40.0" style="-fx-border-color: #0018F9; -fx-border-width: 2;">
+         <effect>
+            <Reflection fraction="1.0" topOpacity="0.74" />
+         </effect>
+      </HBox>
+      <Label fx:id="userDetails" layoutX="31.0" layoutY="30.0" prefHeight="77.0" prefWidth="498.0" text="Label" textFill="#025fba">
+         <font>
+            <Font name="Segoe UI Black" size="27.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
+      <Button fx:id="logOut" layoutX="593.0" layoutY="685.0" mnemonicParsing="false" onAction="#logOut" prefHeight="56.0" prefWidth="152.0" style="-fx-background-color: #0018F9;" text="Log out" textFill="#fffa00">
+         <effect>
+            <DropShadow color="#fff403f2">
+               <input>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Comic Sans MS Bold" size="27.0" />
+         </font>
+      </Button>
+   </children>
+   <effect>
+      <Blend mode="SCREEN" opacity="0.5" />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.graphics.gui.ProfileController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="800.0" fitWidth="807.0" layoutX="-7.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../background.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="305.0" layoutY="39.0" text="Profile" textFill="#fbff00">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="60.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+            <Label layoutX="221.0" layoutY="212.0" style="-fx-background-color: black;" text="Username:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="218.0" layoutY="271.0" style="-fx-background-color: black;" text="HighScore:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="userNameLabel" layoutX="378.0" layoutY="212.0" prefHeight="36.0" prefWidth="262.0" style="-fx-background-color: black;" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="scoreLabel" layoutX="378.0" layoutY="271.0" prefHeight="36.0" prefWidth="262.0" style="-fx-background-color: black;" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="changeUsername" layoutX="94.0" layoutY="400.0" mnemonicParsing="false" onAction="#changeUsername" prefHeight="56.0" prefWidth="307.0" style="-fx-background-color: #0018F9;" text="Change Username" textFill="#fff600">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="changePassword" layoutX="94.0" layoutY="488.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="56.0" prefWidth="307.0" style="-fx-background-color: #0018F9;" text="Change Password" textFill="#fff600">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteAccount" layoutX="247.0" layoutY="581.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="56.0" prefWidth="307.0" style="-fx-background-color: #0018F9;" text="Delete Account" textFill="#fff600">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="mainMenu" layoutX="247.0" layoutY="668.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="56.0" prefWidth="307.0" style="-fx-background-color: #0018F9;" text="Main Menu" textFill="#fff600">
+               <effect>
+                  <DropShadow color="#f7ec00">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Button>
+            <TextField fx:id="newUsername" layoutX="437.0" layoutY="407.0" prefHeight="42.0" prefWidth="234.0" promptText="Enter new username">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="newPassword" layoutX="437.0" layoutY="495.0" prefHeight="42.0" prefWidth="234.0" promptText="Enter new password">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

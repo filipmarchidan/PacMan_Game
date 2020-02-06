@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="801.0" style="-: ;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.graphics.gui.SplashScreenController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="801.0" nodeOrientation="INHERIT" pickOnBounds="true">
+         <image>
+            <Image url="@../background_final.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Button fx:id="splashButton" layoutX="368.0" layoutY="447.0" mnemonicParsing="false" onAction="#splash" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: yellow; -fx-border-radius: 5%; -fx-border-color: #0A3BE9; -fx-border-width: 7; -fx-border-style: dashed;" text="PLAY">
+         <font>
+            <Font name="Segoe UI Black" size="22.0" />
+         </font>
+         <effect>
+            <Lighting diffuseConstant="1.27" specularConstant="1.25" specularExponent="40.0" surfaceScale="1.87">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

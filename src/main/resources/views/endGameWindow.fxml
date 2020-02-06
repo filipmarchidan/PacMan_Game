@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pacman.graphics.gui.EndGameWindowController">
+   <children>
+      <VBox alignment="CENTER" layoutX="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="507.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label fx:id="status" contentDisplay="CENTER" prefHeight="59.0" prefWidth="402.0" text="Label" textAlignment="CENTER" textFill="#9dff00" translateY="-60.0">
+               <font>
+                  <Font name="Arial Black" size="33.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+            <Label fx:id="highScore" prefHeight="46.0" prefWidth="471.0" text="Label" textFill="#9dff00" translateY="-20.0">
+               <font>
+                  <Font name="Arial Black" size="30.0" />
+               </font>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Label>
+            <Button fx:id="highScores" layoutX="250.0" layoutY="263.0" mnemonicParsing="false" onAction="#goToLeaderBoard" prefHeight="45.0" prefWidth="158.0" style="-fx-background-color: #011eff; -fx-border-color: #fbff00; -fx-border-width: 4;" text="High Scores" textFill="#fbff00" translateY="50.0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="mainMenu" mnemonicParsing="false" onAction="#goToMainMenu" prefHeight="45.0" prefWidth="159.0" style="-fx-background-color: #011eff; -fx-border-color: #fbff00; -fx-border-width: 4;" text="Main Menu" textFill="#fbff00" translateY="70.0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="nextLevel" layoutX="236.0" layoutY="218.0" mnemonicParsing="false" onAction="#goToNextLevel" prefHeight="45.0" prefWidth="158.0" style="-fx-background-color: #011eff; -fx-border-color: #fbff00; -fx-border-width: 4;" text="Next Level" textFill="#fbff00" translateY="-40.0">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
